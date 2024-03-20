@@ -93,8 +93,10 @@ class FormedeboxeController extends AbstractController
         public function supprime(Formedeboxe $formedeboxe): Response
         {
             $this->denyAccessUnlessGranted('ROLE_ADMIN');
-            return $this->render('formedeboxe/liste.html.twig'); 
-        }
+            return $this->render('formedeboxe/liste.html.twig',[
+                'formedeboxes' => [$formedeboxe], // Passer un tableau avec l'objet Formedeboxe à la vue
+
+            ]);         }
 
         
     
