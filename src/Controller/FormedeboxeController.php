@@ -92,7 +92,7 @@ class FormedeboxeController extends AbstractController
         #[Route('/suppression/{id}', name: 'supprime')]
         public function supprime(Formedeboxe $formedeboxe): Response
         {
-            $this->denyAccessUnlessGranted('FORMEDEBOXE_SUPPRIME', $formedeboxe);
+            $this->denyAccessUnlessGranted('ROLE_ADMIN');
             return $this->render('formedeboxe/liste.html.twig'); 
         }
 
