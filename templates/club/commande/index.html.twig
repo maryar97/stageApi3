@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Création de la commande
+{% endblock %}
+
+{% block body %}
+	<div class="commande">
+		<div class="row">
+			<div class="col-lg-6">
+				{{ form_start(form, {action:path('order_prepare')}) }}
+				<h1 class="h2 pb-2">Création de la commande</h1>
+				
+			<div class="col-lg-5 offset-lg-1 pt-1">
+				<h2 class="pb-2 pt-md-2 my-4 mt-lg-5">Récapitulatif de la commande
+					
+				</h2>
+				{% set total = null %}
+				{% for formedeboxe in recapCart %}
+{% set total = total + formedeboxe.formedeboxe.prix %}
+				
+
+					<div class="d-sm-flex align-items-center border-top-4">
+						<a class="d-inline-block flex-shrink-0  rounded-1 p-sm-2 p-xl-3 mb-2 mb-sm-0"></a>
+							<img src="/image/{{ formedeboxe.formedeboxe.photo }}" width="150" height="150" alt="{{ formedeboxe.formedeboxe.photo}}">
+							<div class="w-100 pt-1 ps-sm-4">
+								<div class="d-block">
+									<div class="me-3" style="position: relative; top: 15px;">
+										<h3 class="h5 mb-2">
+												{{formedeboxe.formedeboxe.nom}}</a>
+										</h3>
+										<p>
+											{{formedeboxe.formedeboxe.description}}
+										</p>
+									</div>
+									<div>
+<p class="mb-2"> Prix du formedeboxe :{{ (formedeboxe.formedeboxe.prix)|number_format(2, ',', '.') }}€</p>
+										
+									</div>
+								</div>
+								<br>
+								<div class="nav justify-content-end mt-n4">
+									
+								</div>
+							</div>
+					</div>
+					{% endfor %}
+
+					<div class="d-flex align-items-center justify-content-between border-top fs-xl pt-4 mb-4">
+						Total:
+						<span class="fs-3 fw-semibold text-dark ms-2">{{ (total)|number_format(2, ',', '.') }}
+							€</span>
+					</div>
+					<div class="mt-5 text-center">
+						<button class="btn btn-lg btn-dark" type="submit" style="border-radius: 6px; position: relative; top: 20px;">Valider votre commande
+						</button>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		{{ form_end(form) }}</div>
+{% endblock %}
