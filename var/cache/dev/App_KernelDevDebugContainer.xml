@@ -233,6 +233,7 @@
     <parameter key="env(VAR_DUMPER_SERVER)">127.0.0.1:9912</parameter>
     <parameter key="twig.form.resources" type="collection">
       <parameter>form_div_layout.html.twig</parameter>
+      <parameter>bootstrap_5_layout.html.twig</parameter>
     </parameter>
     <parameter key="twig.default_path">/home/mary/Documents/stageApi3/templates</parameter>
     <parameter key="web_profiler.debug_toolbar.intercept_redirects">false</parameter>
@@ -791,7 +792,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
       <tag priority="-50" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">controller.argument_value_resolver</tag>
-      <argument type="service" id=".service_locator.WdL01bJ"/>
+      <argument type="service" id=".service_locator.0LBft1I"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">
       <tag priority="-100" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">controller.argument_value_resolver</tag>
@@ -3904,7 +3905,7 @@
     </service>
     <service id="argument_resolver.not_tagged_controller" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
       <tag name="controller.argument_value_resolver" priority="-200"/>
-      <argument type="service" id=".service_locator.WdL01bJ"/>
+      <argument type="service" id=".service_locator.0LBft1I"/>
     </service>
     <service id="debug.log_processor" class="Symfony\Bridge\Monolog\Processor\DebugProcessor">
       <tag name="kernel.reset" method="reset"/>
@@ -6404,9 +6405,7 @@
         <argument key="/home/mary/Documents/stageApi3/vendor/symfony/twig-bridge/Resources/views/Form">null</argument>
       </argument>
       <argument>/home/mary/Documents/stageApi3/templates</argument>
-      <argument type="collection">
-        <argument>*.twig</argument>
-      </argument>
+      <argument type="collection"/>
     </service>
     <service id="twig.template_cache_warmer" class="Symfony\Bundle\TwigBundle\CacheWarmer\TemplateCacheWarmer">
       <tag name="kernel.cache_warmer"/>
@@ -9433,6 +9432,12 @@
         <argument key="cartService" type="service_closure" id="App\Service\CartService"/>
       </argument>
     </service>
+    <service id=".service_locator.9kKwU2t" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="em" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+      </argument>
+    </service>
     <service id=".service_locator.VPQzeAN" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -9454,7 +9459,7 @@
         <argument key="authenticationUtils" type="service_closure" id="security.authentication_utils"/>
       </argument>
     </service>
-    <service id=".service_locator.WdL01bJ" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.0LBft1I" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\Admin\LicenciéController::creerLicence" type="service_closure" id=".service_locator.t7nLwyX"/>
@@ -9476,6 +9481,7 @@
         <argument key="App\Controller\CartController::removeToCart" type="service_closure" id=".service_locator.IxD9RLm"/>
         <argument key="App\Controller\CommandeController::index" type="service_closure" id=".service_locator.IxD9RLm"/>
         <argument key="App\Controller\CommandeController::prepareOrder" type="service_closure" id=".service_locator.IxD9RLm"/>
+        <argument key="App\Controller\FormedeboxeController::ajout" type="service_closure" id=".service_locator.9kKwU2t"/>
         <argument key="App\Controller\FormedeboxeController::index" type="service_closure" id=".service_locator.erPjUdA"/>
         <argument key="App\Controller\FormedeboxeController::liste" type="service_closure" id=".service_locator.erPjUdA"/>
         <argument key="App\Controller\FormedeboxeController::modifie" type="service_closure" id=".service_locator.VPQzeAN"/>
@@ -9508,6 +9514,7 @@
         <argument key="App\Controller\CartController:removeToCart" type="service_closure" id=".service_locator.IxD9RLm"/>
         <argument key="App\Controller\CommandeController:index" type="service_closure" id=".service_locator.IxD9RLm"/>
         <argument key="App\Controller\CommandeController:prepareOrder" type="service_closure" id=".service_locator.IxD9RLm"/>
+        <argument key="App\Controller\FormedeboxeController:ajout" type="service_closure" id=".service_locator.9kKwU2t"/>
         <argument key="App\Controller\FormedeboxeController:index" type="service_closure" id=".service_locator.erPjUdA"/>
         <argument key="App\Controller\FormedeboxeController:liste" type="service_closure" id=".service_locator.erPjUdA"/>
         <argument key="App\Controller\FormedeboxeController:modifie" type="service_closure" id=".service_locator.VPQzeAN"/>
@@ -12269,7 +12276,7 @@
     <service id="ApiPlatform\Symfony\Security\ResourceAccessCheckerInterface" alias="api_platform.security.resource_access_checker"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.w7.f4fT" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.WdL01bJ"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.0LBft1I"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.KLVvNIq"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
@@ -12296,7 +12303,7 @@
     <service id=".service_locator.bnaLdkn" alias="api_platform.serializer_locator"/>
     <service id=".service_locator.bJ.4HC5" alias=".service_locator.w7.f4fT"/>
     <service id=".service_locator.c1lbGYr" alias=".service_locator.QaaDzHL"/>
-    <service id=".service_locator.jFT6r3G" alias=".service_locator.WdL01bJ"/>
+    <service id=".service_locator.Y3IefFh" alias=".service_locator.0LBft1I"/>
     <service id=".service_locator.BFrsqsn" alias=".service_locator.F9PKc.7"/>
     <service id=".service_locator.yU1rV5H" alias=".service_locator.zEJkACh"/>
     <service id=".service_locator.XtmiKbi" alias=".service_locator.MfxSDRP"/>
@@ -12388,6 +12395,7 @@
     <service id=".service_locator.54.FGuA" alias=".service_locator.Tf6Ed0O"/>
     <service id=".service_locator.KZIQnoB" alias=".service_locator.erPjUdA"/>
     <service id=".service_locator.wqLiG0L" alias=".service_locator.IxD9RLm"/>
+    <service id=".service_locator.gaTSUXr" alias=".service_locator.9kKwU2t"/>
     <service id=".service_locator.HqyoT61" alias=".service_locator.VPQzeAN"/>
     <service id=".service_locator.EUYXuS0" alias=".service_locator.QaaDzHL"/>
     <service id=".service_locator.7NIAq8D" alias=".service_locator.rSTd.nA"/>

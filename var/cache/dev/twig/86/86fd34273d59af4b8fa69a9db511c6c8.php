@@ -65,7 +65,7 @@ class __TwigTemplate_9066b9769ea71232dc4c663da4ee4d6b extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "AJouter une formes de boxe";
+        echo "Ajouter une forme de boxe";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -85,15 +85,17 @@ class __TwigTemplate_9066b9769ea71232dc4c663da4ee4d6b extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "<main class=\"container\">
-    <section class=\"row\">
-            <h1>Ajouter une formes de boxe</h1>
-            ";
-        // line 9
-        $this->loadTemplate("formedeboxe/_form.html.twig", "formedeboxe/ajout.html.twig", 9)->display($context);
+        echo "    <main class=\"container\">
+        <section class=\"row\">
+            <div class=\"col-12\">
+                <h1>Ajouter une forme de boxe</h1>
+                ";
         // line 10
-        echo "    </section>
-</main>
+        $this->loadTemplate("formedeboxe/_form.html.twig", "formedeboxe/ajout.html.twig", 10)->display($context);
+        // line 11
+        echo "            </div>
+        </section>
+    </main>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -124,22 +126,24 @@ class __TwigTemplate_9066b9769ea71232dc4c663da4ee4d6b extends Template
      */
     public function getDebugInfo()
     {
-        return array (  95 => 10,  93 => 9,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  96 => 11,  94 => 10,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}AJouter une formes de boxe{% endblock %}
+{% block title %}Ajouter une forme de boxe{% endblock %}
 
 {% block body %}
-<main class=\"container\">
-    <section class=\"row\">
-            <h1>Ajouter une formes de boxe</h1>
-            {% include \"formedeboxe/_form.html.twig\" %}
-    </section>
-</main>
+    <main class=\"container\">
+        <section class=\"row\">
+            <div class=\"col-12\">
+                <h1>Ajouter une forme de boxe</h1>
+                {% include \"formedeboxe/_form.html.twig\" %}
+            </div>
+        </section>
+    </main>
 {% endblock %}
 ", "formedeboxe/ajout.html.twig", "/home/mary/Documents/stageApi3/templates/formedeboxe/ajout.html.twig");
     }

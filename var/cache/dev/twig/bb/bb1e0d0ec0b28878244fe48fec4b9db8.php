@@ -102,41 +102,48 @@ class __TwigTemplate_bf30154318ab9700dc7f656de17d6b1a extends Template
 \t\t\t\t\t\t<th>Photo</th>
                         <th>Prix</th>
                         <th>Quantité</th>
+\t\t\t\t\t\t<th>Action</th>
+
                         
                     </tr>
                 </thead>
                 <tbody>
                     ";
-        // line 24
+        // line 26
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["formedeboxes"]) || array_key_exists("formedeboxes", $context) ? $context["formedeboxes"] : (function () { throw new RuntimeError('Variable "formedeboxes" does not exist.', 24, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["formedeboxes"]) || array_key_exists("formedeboxes", $context) ? $context["formedeboxes"] : (function () { throw new RuntimeError('Variable "formedeboxes" does not exist.', 26, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["formedeboxe"]) {
-            // line 25
+            // line 27
             echo "                        <tr>
                             <td>";
-            // line 26
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["formedeboxe"], "id", [], "any", false, false, false, 26), "html", null, true);
+            // line 28
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["formedeboxe"], "id", [], "any", false, false, false, 28), "html", null, true);
             echo "</td>
                             <td>";
-            // line 27
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["formedeboxe"], "nom", [], "any", false, false, false, 27), "html", null, true);
+            // line 29
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["formedeboxe"], "nom", [], "any", false, false, false, 29), "html", null, true);
             echo "</td>
 \t\t\t\t\t\t   \t<td>";
-            // line 28
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["formedeboxe"], "description", [], "any", false, false, false, 28), "html", null, true);
+            // line 30
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["formedeboxe"], "description", [], "any", false, false, false, 30), "html", null, true);
             echo "</td>
 \t\t\t\t\t\t\t<td><img src=\"/image/";
-            // line 29
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["formedeboxe"], "photo", [], "any", false, false, false, 29), "html", null, true);
+            // line 31
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["formedeboxe"], "photo", [], "any", false, false, false, 31), "html", null, true);
             echo "\" class=\"card-img-top\" alt=\"...\"></td>
                             <td>";
-            // line 30
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["formedeboxe"], "prix", [], "any", false, false, false, 30), "html", null, true);
+            // line 32
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["formedeboxe"], "prix", [], "any", false, false, false, 32), "html", null, true);
             echo "</td>
                             <td>";
-            // line 31
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["formedeboxe"], "quantite", [], "any", false, false, false, 31), "html", null, true);
+            // line 33
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["formedeboxe"], "quantite", [], "any", false, false, false, 33), "html", null, true);
             echo "</td>
+                            <td>
+                                <a href=\"";
+            // line 35
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("edit", ["id" => twig_get_attribute($this->env, $this->source, $context["formedeboxe"], "id", [], "any", false, false, false, 35)]), "html", null, true);
+            echo "\">Modifier
 
                             <!-- Ajoutez d'autres cellules pour afficher d'autres informations de l'utilisateur -->
                         </tr>
@@ -145,7 +152,7 @@ class __TwigTemplate_bf30154318ab9700dc7f656de17d6b1a extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['formedeboxe'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 36
+        // line 40
         echo "                </tbody>
             </table>
         </main>
@@ -181,7 +188,7 @@ class __TwigTemplate_bf30154318ab9700dc7f656de17d6b1a extends Template
      */
     public function getDebugInfo()
     {
-        return array (  149 => 36,  138 => 31,  134 => 30,  130 => 29,  126 => 28,  122 => 27,  118 => 26,  115 => 25,  111 => 24,  94 => 9,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  156 => 40,  145 => 35,  140 => 33,  136 => 32,  132 => 31,  128 => 30,  124 => 29,  120 => 28,  117 => 27,  113 => 26,  94 => 9,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -205,6 +212,8 @@ class __TwigTemplate_bf30154318ab9700dc7f656de17d6b1a extends Template
 \t\t\t\t\t\t<th>Photo</th>
                         <th>Prix</th>
                         <th>Quantité</th>
+\t\t\t\t\t\t<th>Action</th>
+
                         
                     </tr>
                 </thead>
@@ -217,6 +226,8 @@ class __TwigTemplate_bf30154318ab9700dc7f656de17d6b1a extends Template
 \t\t\t\t\t\t\t<td><img src=\"/image/{{ formedeboxe.photo }}\" class=\"card-img-top\" alt=\"...\"></td>
                             <td>{{ formedeboxe.prix }}</td>
                             <td>{{ formedeboxe.quantite }}</td>
+                            <td>
+                                <a href=\"{{ path('edit', {id: formedeboxe.id})}}\">Modifier
 
                             <!-- Ajoutez d'autres cellules pour afficher d'autres informations de l'utilisateur -->
                         </tr>

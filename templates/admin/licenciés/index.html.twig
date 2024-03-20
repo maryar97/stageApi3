@@ -28,8 +28,7 @@
                 </thead>
                 <tbody>
                     {% for licence in licences %}
-						    {% for user in licence.users %}
-
+						{% for user in licence.users %}
                         <tr>
                             <td>{{ licence.id }}</td>
                             <td>{{ licence.nomlicence }}</td>

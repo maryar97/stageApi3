@@ -33,7 +33,7 @@ return [
         '/order-verify' => [[['_route' => 'order_prepare', '_controller' => 'App\\Controller\\CommandeController::prepareOrder'], null, ['POST' => 0], null, false, false, null]],
         '/formedeboxe' => [[['_route' => 'app_formedeboxe', '_controller' => 'App\\Controller\\FormedeboxeController::index'], null, null, null, false, false, null]],
         '/formedeboxe/liste' => [[['_route' => 'liste', '_controller' => 'App\\Controller\\FormedeboxeController::liste'], null, null, null, false, false, null]],
-        '/ajout' => [[['_route' => 'ajout', '_controller' => 'App\\Controller\\FormedeboxeController::ajout'], null, null, null, false, false, null]],
+        '/ajout' => [[['_route' => 'add', '_controller' => 'App\\Controller\\FormedeboxeController::ajout'], null, null, null, false, false, null]],
         '/horaire' => [[['_route' => 'app_horaire', '_controller' => 'App\\Controller\\HoraireController::index'], null, null, null, false, false, null]],
         '/licence' => [[['_route' => 'app_licence', '_controller' => 'App\\Controller\\LicenceController::index'], null, null, null, false, false, null]],
         '/inscription' => [[['_route' => 'app_inscription', '_controller' => 'App\\Controller\\RegistrationController::register'], null, null, null, false, false, null]],
@@ -154,18 +154,18 @@ return [
                     .'|add/(\\d+)(*:1317)'
                     .'|remove/([^/]++)(*:1341)'
                 .')'
-                .'|/edition([^/]++)(*:1367)'
+                .'|/edition/([^/]++)(*:1368)'
                 .'|/s(?'
-                    .'|uppression([^/]++)(*:1399)'
+                    .'|uppression/([^/]++)(*:1401)'
                     .'|tripe/(?'
-                        .'|create\\-charge/([^/]++)(*:1440)'
-                        .'|([^/]++)(*:1457)'
+                        .'|create\\-charge/([^/]++)(*:1442)'
+                        .'|([^/]++)(*:1459)'
                     .')'
                 .')'
                 .'|/order/(?'
-                    .'|create\\-session\\-stripe/([^/]++)(*:1510)'
-                    .'|success/([^/]++)(*:1535)'
-                    .'|error/([^/]++)(*:1558)'
+                    .'|create\\-session\\-stripe/([^/]++)(*:1512)'
+                    .'|success/([^/]++)(*:1537)'
+                    .'|error/([^/]++)(*:1560)'
                 .')'
             .')/?$}sDu',
     ],
@@ -267,13 +267,13 @@ return [
         1280 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
         1317 => [[['_route' => 'cart_add', '_controller' => 'App\\Controller\\CartController::addToCart'], ['id'], null, null, false, true, null]],
         1341 => [[['_route' => 'cart_remove', '_controller' => 'App\\Controller\\CartController::removeToCart'], ['id'], null, null, false, true, null]],
-        1367 => [[['_route' => 'modifie', '_controller' => 'App\\Controller\\FormedeboxeController::modifie'], ['id'], null, null, false, true, null]],
-        1399 => [[['_route' => 'supprime', '_controller' => 'App\\Controller\\FormedeboxeController::supprime'], ['id'], null, null, false, true, null]],
-        1440 => [[['_route' => 'app_stripe_charge', '_controller' => 'App\\Controller\\StripeController::createCharge'], ['reference'], ['POST' => 0], null, false, true, null]],
-        1457 => [[['_route' => 'app_stripe', '_controller' => 'App\\Controller\\StripeController::index'], ['reference'], null, null, false, true, null]],
-        1510 => [[['_route' => 'payment_stripe', '_controller' => 'App\\Controller\\PaymentController::stripeCheckout'], ['reference'], null, null, false, true, null]],
-        1535 => [[['_route' => 'payment_success', '_controller' => 'App\\Controller\\PaymentController::stripeSuccess'], ['reference'], null, null, false, true, null]],
-        1558 => [
+        1368 => [[['_route' => 'edit', '_controller' => 'App\\Controller\\FormedeboxeController::modifie'], ['id'], null, null, false, true, null]],
+        1401 => [[['_route' => 'supprime', '_controller' => 'App\\Controller\\FormedeboxeController::supprime'], ['id'], null, null, false, true, null]],
+        1442 => [[['_route' => 'app_stripe_charge', '_controller' => 'App\\Controller\\StripeController::createCharge'], ['reference'], ['POST' => 0], null, false, true, null]],
+        1459 => [[['_route' => 'app_stripe', '_controller' => 'App\\Controller\\StripeController::index'], ['reference'], null, null, false, true, null]],
+        1512 => [[['_route' => 'payment_stripe', '_controller' => 'App\\Controller\\PaymentController::stripeCheckout'], ['reference'], null, null, false, true, null]],
+        1537 => [[['_route' => 'payment_success', '_controller' => 'App\\Controller\\PaymentController::stripeSuccess'], ['reference'], null, null, false, true, null]],
+        1560 => [
             [['_route' => 'payment_error', '_controller' => 'App\\Controller\\PaymentController::stripeError'], ['reference'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

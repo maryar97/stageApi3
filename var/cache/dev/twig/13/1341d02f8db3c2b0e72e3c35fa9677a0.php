@@ -43,7 +43,32 @@ class __TwigTemplate_463ab2debcf6a1c37d2c2a40b46735ab extends Template
         echo "
 ";
         // line 2
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formedeboxeForm"]) || array_key_exists("formedeboxeForm", $context) ? $context["formedeboxeForm"] : (function () { throw new RuntimeError('Variable "formedeboxeForm" does not exist.', 2, $this->source); })()), 'form');
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formedeboxeForm"]) || array_key_exists("formedeboxeForm", $context) ? $context["formedeboxeForm"] : (function () { throw new RuntimeError('Variable "formedeboxeForm" does not exist.', 2, $this->source); })()), 'form_start');
+        echo "
+    ";
+        // line 3
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formedeboxeForm"]) || array_key_exists("formedeboxeForm", $context) ? $context["formedeboxeForm"] : (function () { throw new RuntimeError('Variable "formedeboxeForm" does not exist.', 3, $this->source); })()), "nom", [], "any", false, false, false, 3), 'row');
+        echo "
+    ";
+        // line 4
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formedeboxeForm"]) || array_key_exists("formedeboxeForm", $context) ? $context["formedeboxeForm"] : (function () { throw new RuntimeError('Variable "formedeboxeForm" does not exist.', 4, $this->source); })()), "description", [], "any", false, false, false, 4), 'row');
+        echo "
+    ";
+        // line 5
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formedeboxeForm"]) || array_key_exists("formedeboxeForm", $context) ? $context["formedeboxeForm"] : (function () { throw new RuntimeError('Variable "formedeboxeForm" does not exist.', 5, $this->source); })()), "photo", [], "any", false, false, false, 5), 'row');
+        echo "
+    ";
+        // line 6
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formedeboxeForm"]) || array_key_exists("formedeboxeForm", $context) ? $context["formedeboxeForm"] : (function () { throw new RuntimeError('Variable "formedeboxeForm" does not exist.', 6, $this->source); })()), "prix", [], "any", false, false, false, 6), 'row');
+        echo "
+    ";
+        // line 7
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formedeboxeForm"]) || array_key_exists("formedeboxeForm", $context) ? $context["formedeboxeForm"] : (function () { throw new RuntimeError('Variable "formedeboxeForm" does not exist.', 7, $this->source); })()), "quantite", [], "any", false, false, false, 7), 'row');
+        echo "
+    <button type=\"submit\" class=\"btn btn-dark\">Valider</button>
+";
+        // line 9
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formedeboxeForm"]) || array_key_exists("formedeboxeForm", $context) ? $context["formedeboxeForm"] : (function () { throw new RuntimeError('Variable "formedeboxeForm" does not exist.', 9, $this->source); })()), 'form_end');
         
         $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
 
@@ -73,12 +98,19 @@ class __TwigTemplate_463ab2debcf6a1c37d2c2a40b46735ab extends Template
      */
     public function getDebugInfo()
     {
-        return array (  46 => 2,  43 => 1,);
+        return array (  71 => 9,  66 => 7,  62 => 6,  58 => 5,  54 => 4,  50 => 3,  46 => 2,  43 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("
-{{ form(formedeboxeForm)}}", "formedeboxe/_form.html.twig", "/home/mary/Documents/stageApi3/templates/formedeboxe/_form.html.twig");
+{{ form_start(formedeboxeForm) }}
+    {{ form_row(formedeboxeForm.nom) }}
+    {{ form_row(formedeboxeForm.description) }}
+    {{ form_row(formedeboxeForm.photo) }}
+    {{ form_row(formedeboxeForm.prix) }}
+    {{ form_row(formedeboxeForm.quantite) }}
+    <button type=\"submit\" class=\"btn btn-dark\">Valider</button>
+{{ form_end(formedeboxeForm) }}", "formedeboxe/_form.html.twig", "/home/mary/Documents/stageApi3/templates/formedeboxe/_form.html.twig");
     }
 }

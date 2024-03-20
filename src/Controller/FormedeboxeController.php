@@ -5,9 +5,11 @@ namespace App\Controller;
 use App\Entity\Formedeboxe;
 use App\Form\FormedeboxeFormType;
 use App\Repository\FormedeboxeRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 
 class FormedeboxeController extends AbstractController
 {
@@ -37,34 +39,64 @@ class FormedeboxeController extends AbstractController
 
         }
 
-        #[Route('/ajout', name: 'ajout')]
-        public function ajout(): Response
+        #[Route('/ajout', name: 'add')]
+        public function ajout(Request $request, EntityManagerInterface $em): Response
         {
             $this->denyAccessUnlessGranted('ROLE_ADMIN');
-
         // on crée une "nouvelle forme de boxe"
         $formedeboxe = new Formedeboxe(); 
 
         // on crée le formulaire
         $formedeboxeForm = $this->createForm(FormedeboxeFormType::class, $formedeboxe);
-            return $this->render('formedeboxe/ajout.html.twig',[
+        
+        // on traite la requête du formulaire
+        $formedeboxeForm->handleRequest($request);
+        // dd($formedeboxeForm);
+
+        // on verifie si le formulaire est soumis ET valide
+        if($formedeboxeForm->isSubmitted() && $formedeboxeForm->isValid()){
+            // on génère le nom
+            //dd($produit);
+            $prix = $formedeboxe->getPrix();
+            $formedeboxe->setPrix($prix);
+
+
+            // on stock
+            $em->persist($formedeboxe);
+            $em->flush();
+
+            $this->addFlash('success', 'Forme de boxe ajoutée avec succès');
+
+            // on redirige 
+            return $this->redirectToRoute('liste');
+        }
+        
+        
+        
+        return $this->render('formedeboxe/add.html.twig',[
                 'formedeboxeForm' => $formedeboxeForm->createView()
                 ]); 
         }
 
-        #[Route('/edition{id}', name: 'modifie')]
+        #[Route('/edition/{id}', name: 'edit')]
         public function modifie(Formedeboxe $formedeboxe): Response
         {
-            $this->denyAccessUnlessGranted('FORMEDEBOXE_EDIT', $formedeboxe);
-            return $this->render('formedeboxe/liste.html.twig'); 
+            
+            $this->denyAccessUnlessGranted('ROLE_ADMIN');
+            return $this->render('formedeboxe/liste.html.twig',[
+                'formedeboxes' => [$formedeboxe], // Passer un tableau avec l'objet Formedeboxe à la vue
+
+            ]); 
         }
 
-        #[Route('/suppression{id}', name: 'supprime')]
+        #[Route('/suppression/{id}', name: 'supprime')]
         public function supprime(Formedeboxe $formedeboxe): Response
         {
             $this->denyAccessUnlessGranted('FORMEDEBOXE_SUPPRIME', $formedeboxe);
             return $this->render('formedeboxe/liste.html.twig'); 
         }
+
+        
     
     
     

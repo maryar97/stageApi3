@@ -73,15 +73,15 @@ class __TwigTemplate_b2c7c42fae49c8bfa1efd510249ae2a5 extends Template
  ";
         // line 22
         $this->displayBlock('header', $context, $blocks);
-        // line 85
+        // line 96
         echo "        ";
         $this->displayBlock('body', $context, $blocks);
-        // line 86
+        // line 97
         echo "
 ";
-        // line 87
+        // line 98
         $this->displayBlock('footer', $context, $blocks);
-        // line 152
+        // line 163
         echo "</body>        
 </html>";
         
@@ -166,14 +166,47 @@ class __TwigTemplate_b2c7c42fae49c8bfa1efd510249ae2a5 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "header"));
 
         // line 23
-        echo "   
+        echo "
+ ";
+        // line 24
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 24, $this->source); })()), "flashes", [], "any", false, false, false, 24));
+        foreach ($context['_seq'] as $context["label"] => $context["messages"]) {
+            // line 25
+            echo "\t";
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable($context["messages"]);
+            foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
+                // line 26
+                echo "\t\t<div class=\"alert alert-";
+                echo twig_escape_filter($this->env, $context["label"], "html", null, true);
+                echo " alert-dismissible\" role=\"alert\">
+\t\t\t<button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\" aria-label=\"close\"></button>
+\t\t\t<div class=\"alert-message\">
+\t\t\t\t";
+                // line 29
+                echo $context["message"];
+                echo "
+\t\t\t</div>
+\t\t</div>
+\t";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['label'], $context['messages'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 34
+        echo "
         
-   
+
     <nav class=\"navbar navbar-expand-xlg bg-secondary\">
   <div class=\"container-fluid\">
   <img src=\"image/logoclub.jpg\" alt=\"\" width=\"75px\">
     <a class=\"navbar-brand\" href=\"";
-        // line 29
+        // line 40
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_accueil");
         echo "\">Amiens BC</a>
     <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarColor01\" aria-controls=\"navbarColor01\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
@@ -183,7 +216,7 @@ class __TwigTemplate_b2c7c42fae49c8bfa1efd510249ae2a5 extends Template
       <ul class=\"navbar-nav me-auto\">
         <li class=\"nav-item\">
           <a class=\"nav-link active\" href=\"";
-        // line 36
+        // line 47
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_club");
         echo "\">club
             <span class=\"visually-hidden\">(current)</span>
@@ -191,27 +224,27 @@ class __TwigTemplate_b2c7c42fae49c8bfa1efd510249ae2a5 extends Template
         </li>
         <li class=\"nav-item\">
           <a class=\"nav-link\" href=\"";
-        // line 41
+        // line 52
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_horaire");
         echo "\">Horaire</a>
         </li>
         <li class=\"nav-item\">
           <a class=\"nav-link\" href=\"";
-        // line 44
+        // line 55
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_inscription");
         echo "\">inscription</a>
         </li>
 <ul class=\"navbar-nav ms-auto mb-2 mb-lg-0\">
 \t\t\t\t";
-        // line 47
-        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 47, $this->source); })()), "user", [], "any", false, false, false, 47)) {
-            // line 48
+        // line 58
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 58, $this->source); })()), "user", [], "any", false, false, false, 58)) {
+            // line 59
             echo "\t\t\t\t\t";
             if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
-                // line 49
+                // line 60
                 echo "\t\t\t\t\t\t<li class=\"nav-item\">
 \t\t\t\t\t\t\t<a class=\"nav-link\" href=\"";
-                // line 50
+                // line 61
                 echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_index");
                 echo "\">
 \t\t\t\t\t\t\t\tAdministration
@@ -219,57 +252,57 @@ class __TwigTemplate_b2c7c42fae49c8bfa1efd510249ae2a5 extends Template
 \t\t\t\t\t\t</li>
 \t\t\t\t\t";
             }
-            // line 55
+            // line 66
             echo "                  <li class=\"nav-item\">
           <a class=\"nav-link\" href=\"";
-            // line 56
+            // line 67
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
             echo "\">déconnexion</a>
         </li>
         ";
         } else {
-            // line 59
+            // line 70
             echo "          <li class=\"nav-item\">
           <a class=\"nav-link\" href=\"";
-            // line 60
+            // line 71
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_connexion");
             echo "\">connexion</a>
         </li>
         ";
         }
-        // line 63
+        // line 74
         echo "        <li class=\"nav-item\">
             <a class=\"nav-link\" href=\"";
-        // line 64
+        // line 75
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_cart");
         echo "\">
     Panier (";
-        // line 65
-        echo twig_escape_filter($this->env, twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 65, $this->source); })()), "session", [], "any", false, false, false, 65), "get", ["cart"], "method", false, false, false, 65)), "html", null, true);
+        // line 76
+        echo twig_escape_filter($this->env, twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 76, $this->source); })()), "session", [], "any", false, false, false, 76), "get", ["cart"], "method", false, false, false, 76)), "html", null, true);
         echo ")
 </a>
 
         </li>
         <li class=\"nav-item dropdown\">
           <a class=\"nav-link dropdown-toggle\" data-bs-toggle=\"dropdown\" href=\"";
-        // line 70
+        // line 81
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_formedeboxe");
         echo "\" role=\"button btn-dark\" aria-haspopup=\"true\" aria-expanded=\"false\">Forme de Boxe</a>
           <div class=\"dropdown-menu\">
             <a class=\"dropdown-item\" href=\"";
-        // line 72
+        // line 83
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_bea");
         echo "\">Boxe Educative</a>
             <a class=\"dropdown-item\" href=\"";
-        // line 73
+        // line 84
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_ba");
         echo "\">Boxe Amateur</a>
             <a class=\"dropdown-item\" href=\"";
-        // line 74
+        // line 85
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_bp");
         echo "\">Boxe PRO</a>
             <a class=\"dropdown-item\" href=\"";
-        // line 75
+        // line 86
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_aeroboxe");
         echo "\">Aeroboxe</a>
           
@@ -289,7 +322,7 @@ class __TwigTemplate_b2c7c42fae49c8bfa1efd510249ae2a5 extends Template
 
     }
 
-    // line 85
+    // line 96
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -307,7 +340,7 @@ class __TwigTemplate_b2c7c42fae49c8bfa1efd510249ae2a5 extends Template
 
     }
 
-    // line 87
+    // line 98
     public function block_footer($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -317,7 +350,7 @@ class __TwigTemplate_b2c7c42fae49c8bfa1efd510249ae2a5 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "footer"));
 
-        // line 88
+        // line 99
         echo "  <footer id=\"footer\">
       <div class=\"container\">
         <div class=\"row\">
@@ -403,7 +436,7 @@ class __TwigTemplate_b2c7c42fae49c8bfa1efd510249ae2a5 extends Template
      */
     public function getDebugInfo()
     {
-        return array (  321 => 88,  311 => 87,  293 => 85,  273 => 75,  269 => 74,  265 => 73,  261 => 72,  256 => 70,  248 => 65,  244 => 64,  241 => 63,  235 => 60,  232 => 59,  226 => 56,  223 => 55,  215 => 50,  212 => 49,  209 => 48,  207 => 47,  201 => 44,  195 => 41,  187 => 36,  177 => 29,  169 => 23,  159 => 22,  147 => 17,  137 => 16,  125 => 12,  115 => 11,  96 => 6,  85 => 152,  83 => 87,  80 => 86,  77 => 85,  75 => 22,  71 => 20,  69 => 16,  66 => 15,  64 => 11,  56 => 6,  49 => 1,);
+        return array (  354 => 99,  344 => 98,  326 => 96,  306 => 86,  302 => 85,  298 => 84,  294 => 83,  289 => 81,  281 => 76,  277 => 75,  274 => 74,  268 => 71,  265 => 70,  259 => 67,  256 => 66,  248 => 61,  245 => 60,  242 => 59,  240 => 58,  234 => 55,  228 => 52,  220 => 47,  210 => 40,  202 => 34,  188 => 29,  181 => 26,  176 => 25,  172 => 24,  169 => 23,  159 => 22,  147 => 17,  137 => 16,  125 => 12,  115 => 11,  96 => 6,  85 => 163,  83 => 98,  80 => 97,  77 => 96,  75 => 22,  71 => 20,  69 => 16,  66 => 15,  64 => 11,  56 => 6,  49 => 1,);
     }
 
     public function getSourceContext()
@@ -430,9 +463,20 @@ class __TwigTemplate_b2c7c42fae49c8bfa1efd510249ae2a5 extends Template
     </head>
     <body>
  {% block header %}
-   
+
+ {% for label, messages  in app.flashes %}
+\t{% for message in messages %}
+\t\t<div class=\"alert alert-{{ label }} alert-dismissible\" role=\"alert\">
+\t\t\t<button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\" aria-label=\"close\"></button>
+\t\t\t<div class=\"alert-message\">
+\t\t\t\t{{ message|raw }}
+\t\t\t</div>
+\t\t</div>
+\t{% endfor %}
+{% endfor %}
+
         
-   
+
     <nav class=\"navbar navbar-expand-xlg bg-secondary\">
   <div class=\"container-fluid\">
   <img src=\"image/logoclub.jpg\" alt=\"\" width=\"75px\">
