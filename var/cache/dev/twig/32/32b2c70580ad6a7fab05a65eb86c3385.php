@@ -287,6 +287,6 @@ class __TwigTemplate_e3b460eaaab75b2af063ce36a26db11b extends Template
     </script>
 
 {% endblock %}
-", "stripe/index.html.twig", "/home/mary/Documents/stageApi2/templates/stripe/index.html.twig");
+", "stripe/index.html.twig", "/home/mary/Documents/stageApi3/templates/stripe/index.html.twig");
     }
 }

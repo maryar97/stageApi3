@@ -743,6 +743,6 @@ class __TwigTemplate_7d1abce5f3135f9e85591dd7195e4f77 extends Template
         </div>
     </div>
 {% endmacro %}
-", "@WebProfiler/Collector/cache.html.twig", "/home/mary/Documents/stageApi2/vendor/symfony/web-profiler-bundle/Resources/views/Collector/cache.html.twig");
+", "@WebProfiler/Collector/cache.html.twig", "/home/mary/Documents/stageApi3/vendor/symfony/web-profiler-bundle/Resources/views/Collector/cache.html.twig");
     }
 }

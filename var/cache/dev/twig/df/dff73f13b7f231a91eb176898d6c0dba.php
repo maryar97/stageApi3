@@ -224,6 +224,6 @@ class __TwigTemplate_57adf3cf4b5e9d4d2a26934747ea0854 extends Template
 {% endblock %}
 
 
-", "bea/index.html.twig", "/home/mary/Documents/stageApi2/templates/bea/index.html.twig");
+", "bea/index.html.twig", "/home/mary/Documents/stageApi3/templates/bea/index.html.twig");
     }
 }

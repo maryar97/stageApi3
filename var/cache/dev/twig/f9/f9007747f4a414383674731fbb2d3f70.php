@@ -56,10 +56,16 @@ class __TwigTemplate_0143b269b5af4eff42777e42fea60511 extends Template
 \t\t\t\t\tListe des licenciés</a>
 \t\t\t</p>
 \t\t\t<p>
-\t\t\t\t<a href=\"#\">
-\t\t\t\t\tAjouter une licencié</a>
+\t\t\t\t<a href=\"";
+        // line 14
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_licenciés_creer");
+        echo "\">
+\t\t\t\t\tAjouter un licencié</a>
 \t\t\t</p>
 
+\t\t\t";
+        // line 22
+        echo "
 \t\t</div>
 \t</article>
 
@@ -70,14 +76,10 @@ class __TwigTemplate_0143b269b5af4eff42777e42fea60511 extends Template
 \t\t<div class=\"card-body\">
 \t\t\t<p>
 \t\t\t\t<a href=\"";
-        // line 27
+        // line 32
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("liste");
-        echo "\"\">
+        echo "\">
 \t\t\t\t\tListe des formes de boxe</a>
-\t\t\t</p>
-\t\t\t<p>
-\t\t\t\t<a href=\"#\">
-\t\t\t\t\tAjouter une forme de boxe</a>
 \t\t\t</p>
 
 \t\t</div>
@@ -89,7 +91,10 @@ class __TwigTemplate_0143b269b5af4eff42777e42fea60511 extends Template
 \t\t</div>
 \t\t<div class=\"card-body\">
 \t\t\t<p>
-\t\t\t\t<a href=\"#\">
+\t\t\t\t<a href=\"";
+        // line 45
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_users_index");
+        echo "\">
 \t\t\t\t\tListe des utilisateurs</a>
 \t\t\t</p>
 \t\t</div>
@@ -124,7 +129,7 @@ class __TwigTemplate_0143b269b5af4eff42777e42fea60511 extends Template
      */
     public function getDebugInfo()
     {
-        return array (  74 => 27,  54 => 10,  43 => 1,);
+        return array (  96 => 45,  80 => 32,  68 => 22,  61 => 14,  54 => 10,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -142,9 +147,14 @@ class __TwigTemplate_0143b269b5af4eff42777e42fea60511 extends Template
 \t\t\t\t\tListe des licenciés</a>
 \t\t\t</p>
 \t\t\t<p>
-\t\t\t\t<a href=\"#\">
-\t\t\t\t\tAjouter une licencié</a>
+\t\t\t\t<a href=\"{{ path('admin_licenciés_creer')}}\">
+\t\t\t\t\tAjouter un licencié</a>
 \t\t\t</p>
+
+\t\t\t{# <p>
+\t\t\t\t<a href=\"{{ path('admin_licenciés_supprimer')}}\">
+\t\t\t\t\tSupprimer un licencié</a>
+\t\t\t</p> #}
 
 \t\t</div>
 \t</article>
@@ -155,12 +165,8 @@ class __TwigTemplate_0143b269b5af4eff42777e42fea60511 extends Template
 \t\t</div>
 \t\t<div class=\"card-body\">
 \t\t\t<p>
-\t\t\t\t<a href=\"{{ path('liste')}}\"\">
+\t\t\t\t<a href=\"{{ path('liste')}}\">
 \t\t\t\t\tListe des formes de boxe</a>
-\t\t\t</p>
-\t\t\t<p>
-\t\t\t\t<a href=\"#\">
-\t\t\t\t\tAjouter une forme de boxe</a>
 \t\t\t</p>
 
 \t\t</div>
@@ -172,7 +178,7 @@ class __TwigTemplate_0143b269b5af4eff42777e42fea60511 extends Template
 \t\t</div>
 \t\t<div class=\"card-body\">
 \t\t\t<p>
-\t\t\t\t<a href=\"#\">
+\t\t\t\t<a href=\"{{ path('admin_users_index')}}\">
 \t\t\t\t\tListe des utilisateurs</a>
 \t\t\t</p>
 \t\t</div>

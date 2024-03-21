@@ -11,9 +11,14 @@
 					Liste des licenciés</a>
 			</p>
 			<p>
-				<a href="#">
-					Ajouter une licencié</a>
+				<a href="{{ path('admin_licenciés_creer')}}">
+					Ajouter un licencié</a>
 			</p>
+
+			{# <p>
+				<a href="{{ path('admin_licenciés_supprimer')}}">
+					Supprimer un licencié</a>
+			</p> #}
 
 		</div>
 	</article>
@@ -24,12 +29,8 @@
 		</div>
 		<div class="card-body">
 			<p>
-				<a href="{{ path('liste')}}"">
+				<a href="{{ path('liste')}}">
 					Liste des formes de boxe</a>
-			</p>
-			<p>
-				<a href="#">
-					Ajouter une forme de boxe</a>
 			</p>
 
 		</div>
@@ -41,7 +42,7 @@
 		</div>
 		<div class="card-body">
 			<p>
-				<a href="#">
+				<a href="{{ path('admin_users_index')}}">
 					Liste des utilisateurs</a>
 			</p>
 		</div>

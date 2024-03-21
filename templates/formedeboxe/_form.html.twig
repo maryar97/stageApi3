@@ -5,5 +5,5 @@
     {{ form_row(formedeboxeForm.photo) }}
     {{ form_row(formedeboxeForm.prix) }}
     {{ form_row(formedeboxeForm.quantite) }}
-    <button type="submit" class="btn btn-dark">Valider</button>
+    <button type="submit" class="btn btn-dark">{{ button_label|default('Ajouter') }}</button>
 {{ form_end(formedeboxeForm) }}

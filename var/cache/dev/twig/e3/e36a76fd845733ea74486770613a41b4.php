@@ -262,6 +262,6 @@ label: 'Mot de passe'
 
 {% endblock %}
 
-", "registration/register.html.twig", "/home/mary/Documents/stageApi2/templates/registration/register.html.twig");
+", "registration/register.html.twig", "/home/mary/Documents/stageApi3/templates/registration/register.html.twig");
     }
 }

@@ -163,6 +163,6 @@ class __TwigTemplate_aef13657837c747c87de445bcd7b53c4 extends Template
     </ul>
 </div>
 {% endblock %}
-", "payment/index.html.twig", "/home/mary/Documents/stageApi2/templates/payment/index.html.twig");
+", "payment/index.html.twig", "/home/mary/Documents/stageApi3/templates/payment/index.html.twig");
     }
 }

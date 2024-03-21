@@ -2,16 +2,12 @@
 
 namespace App\Form;
 
-use App\Entity\Club;
-use App\Entity\Commande;
 use App\Entity\Formedeboxe;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
 class FormedeboxeFormType extends AbstractType
 {
@@ -26,11 +22,6 @@ class FormedeboxeFormType extends AbstractType
                 'label' => 'Description',
                 'attr' => ['placeholder' => 'Description de la forme de boxe'],
             ])
-            ->add('photo', FileType::class, [
-                'attr' => ['class' => 'form-control form-control-file'],
-                'label' => 'Photo',
-                'required' => false, // à adapter selon votre besoin de validation
-            ])
             ->add('prix', TextType::class, [
                 'label' => 'Prix (€)',
                 'attr' => ['placeholder' => 'Prix de la forme de boxe'],
@@ -39,6 +30,21 @@ class FormedeboxeFormType extends AbstractType
                 'label' => 'Quantité',
                 'attr' => ['placeholder' => 'Quantité disponible'],
             ]);
+
+        // Ajouter le champ photo conditionnellement
+        if (!$options['data']->getPhoto()) {
+            $builder->add('photo', FileType::class, [
+                'attr' => ['class' => 'form-control form-control-file'],
+                'label' => 'Photo',
+                'required' => false,
+            ]);
+        } else {
+            // Sinon, ajouter le champ photo en tant que champ TextType pour la modification
+            $builder->add('photo', TextType::class, [
+                'label' => 'Photo',
+                'attr' => ['placeholder' => 'Chemin de la photo'],
+            ]);
+        }
     }
 
     public function configureOptions(OptionsResolver $resolver): void

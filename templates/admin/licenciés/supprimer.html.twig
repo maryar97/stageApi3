@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Administration de forme de boxe
+{% endblock %}
+
+{% block body %}
+	<main class="container">
+		<section class="row">
+			<div class="col-12">
+				{% for user in licence.users %}
+
+					<h2>Supprimer le licencié "{{ user.getNom() }}"</h2>
+<form method="post" action="{{ path('admin_licenciés_index', {'id': user.id}) }}" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer ce licencié ?')">
+                        <button type="submit" class="btn btn-dark">Supprimer</button>
+                    </form>				</div>
+			</section>
+		</main>
+	{% endfor %}
+
+{% endblock %}

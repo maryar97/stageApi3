@@ -274,6 +274,6 @@ class __TwigTemplate_c8628e246255a7da953e1b5f9915abf6 extends Template
 
 </body>
 </html>
-", "@ApiPlatform/Graphiql/index.html.twig", "/home/mary/Documents/stageApi2/vendor/api-platform/core/src/Symfony/Bundle/Resources/views/Graphiql/index.html.twig");
+", "@ApiPlatform/Graphiql/index.html.twig", "/home/mary/Documents/stageApi3/vendor/api-platform/core/src/Symfony/Bundle/Resources/views/Graphiql/index.html.twig");
     }
 }

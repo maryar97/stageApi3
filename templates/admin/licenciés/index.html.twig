@@ -13,7 +13,7 @@
                     <tr>
                         <th>ID</th>
                         <th>Nom de licence</th>
-						<th>Nom</th>
+                        <th>Nom</th>
                         <th>Prénom</th>
                         <th>Adresse</th>
                         <th>Code postal</th>
@@ -21,34 +21,43 @@
                         <th>Pays</th>
                         <th>Téléphone</th>
                         <th>Email</th>
-						<th>Sexe</th>
+                        <th>Sexe</th>
                         <th>Date de naissance</th>
                         <!-- Ajoutez d'autres colonnes pour afficher d'autres informations de l'utilisateur -->
                     </tr>
                 </thead>
                 <tbody>
                     {% for licence in licences %}
-						{% for user in licence.users %}
-                        <tr>
-                            <td>{{ licence.id }}</td>
-                            <td>{{ licence.nomlicence }}</td>
-							<td>{{ user.getNom() }}</td>
-                            <td>{{ user.getPrenom() }}</td>
-                            <td>{{ user.getAdresse() }}</td>
-                            <td>{{ user.getCodepostal() }}</td>
-                            <td>{{ user.getVille() }}</td>
-                            <td>{{ user.getPays() }}</td>
-                            <td>{{ user.getTelephone() }}</td>
-                            <td>{{ user.getEmail() }}</td>
-							<td>{{ user.getSexe() }}</td>
-                            <td>{{ user.getDatenaiss() ? user.getDatenaiss().format('Y-m-d') : '' }}</td>
-                            <!-- Ajoutez d'autres cellules pour afficher d'autres informations de l'utilisateur -->
-                        </tr>
-						    {% endfor %}
-
+                        {% for user in licence.users %}
+                            <tr>
+                                <td>{{ licence.id }}</td>
+                                <td>{{ licence.nomlicence }}</td>
+                                <td>{{ user.getNom() }}</td>
+                                <td>{{ user.getPrenom() }}</td>
+                                <td>{{ user.getAdresse() }}</td>
+                                <td>{{ user.getCodepostal() }}</td>
+                                <td>{{ user.getVille() }}</td>
+                                <td>{{ user.getPays() }}</td>
+                                <td>{{ user.getTelephone() }}</td>
+                                <td>{{ user.getEmail() }}</td>
+                                <td>{{ user.getSexe() }}</td>
+                                <td>{{ user.getDatenaiss() ? user.getDatenaiss()|date('Y-m-d') : '' }}</td>
+                                <!-- Ajoutez d'autres cellules pour afficher d'autres informations de l'utilisateur -->
+                            </tr>
+                        {% endfor %}
                     {% endfor %}
                 </tbody>
             </table>
+
+            <!-- Ajouter une section pour afficher les utilisateurs sélectionnés -->
+            {% if selectedUsers is defined %}
+                <h2>Utilisateurs sélectionnés dans le formulaire de création de licence :</h2>
+                <ul>
+                    {% for selectedUser in selectedUsers %}
+                        <li>{{ selectedUser.prenom }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
         </main>
     </div>
 </div>

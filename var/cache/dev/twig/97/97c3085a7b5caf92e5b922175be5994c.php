@@ -195,6 +195,6 @@ class __TwigTemplate_b76538637168ada90c489f518b7e950d extends Template
 </div>
 
 {% endblock %}
-", "accueil/index.html.twig", "/home/mary/Documents/stageApi2/templates/accueil/index.html.twig");
+", "accueil/index.html.twig", "/home/mary/Documents/stageApi3/templates/accueil/index.html.twig");
     }
 }

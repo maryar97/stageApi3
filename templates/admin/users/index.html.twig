@@ -1,11 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Liste des catégories
+{% block title %}Liste des utilisateurs
 {% endblock %}
 
 {% block body %}
 	<div class="container">
 		<div class="row">
+
+					{% include "_adminnav.html.twig" %}
 
 			<main class="col-9 border border-white p-2">
 
@@ -56,6 +58,8 @@
 									id="switch{{ user.id }}" {{user.isVerified ? "checked" : "" }} disabled>
 									<label class="form-check-label" for="switch{{ user.id }}"></label>
 								</div>
+
+
 
 
 							</td>

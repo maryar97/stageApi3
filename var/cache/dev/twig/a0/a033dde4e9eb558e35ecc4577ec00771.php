@@ -222,6 +222,6 @@ class __TwigTemplate_b89bcdebc295e891201d09a97fb45822 extends Template
     </div>
 {% endfor %}
 {% endblock %}
-", "bp/index.html.twig", "/home/mary/Documents/stageApi2/templates/bp/index.html.twig");
+", "bp/index.html.twig", "/home/mary/Documents/stageApi3/templates/bp/index.html.twig");
     }
 }

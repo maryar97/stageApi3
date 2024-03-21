@@ -3,5 +3,13 @@ controllers:
         path: ../src/Controller/
         namespace: App\Controller
     type: attribute
+
+    # config/routes.yaml ou config/routes/routes.yaml
+
+admin_licenciés_supprimer:
+    path: /admin/licenciés/suppression/{id}
+    controller: App\Controller\Admin\LicenciéController::supprimer
+    methods: [GET, POST] # Autoriser à la fois les méthodes GET et POST
+
     
     

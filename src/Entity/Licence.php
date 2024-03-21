@@ -17,8 +17,6 @@ class Licence
     #[ORM\Column]
     private ?int $id = null;
 
-
-
     // #[ORM\Column(length: 255)]
     // private ?string $datecreat = null;
 
@@ -34,6 +32,7 @@ class Licence
     public function __construct()
     {
         $this->users = new ArrayCollection();
+        $this->createdAt = new \DateTimeImmutable();
     }
 
 

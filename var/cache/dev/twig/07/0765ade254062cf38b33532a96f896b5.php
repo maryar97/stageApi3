@@ -212,6 +212,6 @@ class __TwigTemplate_7631a7f07f73089ade597b639a536832 extends Template
     </div>
 {% endfor %}
 {% endblock %}
-", "aeroboxe/index.html.twig", "/home/mary/Documents/stageApi2/templates/aeroboxe/index.html.twig");
+", "aeroboxe/index.html.twig", "/home/mary/Documents/stageApi3/templates/aeroboxe/index.html.twig");
     }
 }

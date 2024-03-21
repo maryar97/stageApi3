@@ -88,6 +88,6 @@ class __TwigTemplate_9ccbcbf42e2ed2b6b87465fbae89d923 extends Template
     <input type=\"hidden\" name=\"_token\" value=\"{{ csrf_token('delete' ~ adresse.id) }}\">
     <button class=\"btn\">Supprimer</button>
 </form>
-", "adresse/_delete_form.html.twig", "/home/mary/Documents/stageApi2/templates/adresse/_delete_form.html.twig");
+", "adresse/_delete_form.html.twig", "/home/mary/Documents/stageApi3/templates/adresse/_delete_form.html.twig");
     }
 }

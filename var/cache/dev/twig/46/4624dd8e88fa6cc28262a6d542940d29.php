@@ -262,6 +262,6 @@ class __TwigTemplate_2b13aa11078e241cda425c8140fa483f extends Template
 
 
 {% endblock %}
-", "club/index.html.twig", "/home/mary/Documents/stageApi2/templates/club/index.html.twig");
+", "club/index.html.twig", "/home/mary/Documents/stageApi3/templates/club/index.html.twig");
     }
 }

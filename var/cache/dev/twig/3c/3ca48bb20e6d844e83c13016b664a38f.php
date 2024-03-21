@@ -312,6 +312,6 @@ class __TwigTemplate_088c3b87c0da0ee62a0288f2f77257b0 extends Template
 \t\t\t</div>
 \t\t</div>
 \t\t{{ form_end(form) }}</div>
-{% endblock %}", "commande/index.html.twig", "/home/mary/Documents/stageApi2/templates/commande/index.html.twig");
+{% endblock %}", "commande/index.html.twig", "/home/mary/Documents/stageApi3/templates/commande/index.html.twig");
     }
 }

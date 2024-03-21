@@ -23,13 +23,13 @@ class AppFixtures extends Fixture
         }
     public function load(ObjectManager $manager): void
     {
-        $users = new Users();
-        $users->setnom('dupont')
+        $users1 = new Users();
+        $users1->setnom('dupont')
         ->setprenom('marie');
-        $password = $this->hasher->hashPassword($users, "Afpa1234");
-        $users->setPassword($password)
+        $password = $this->hasher->hashPassword($users1, "Afpa1234");
+        $users1->setPassword($password)
         ->setsexe('f')
-        ->setemail('mdupont@gmail.com')
+        ->setEmail('mdupont@gmail.com')
         ->setadresse('1 rue du chemin')
         ->setDatenaiss(new \DateTime('06/04/1967'))
         ->setcodepostal('80567')
@@ -39,43 +39,60 @@ class AppFixtures extends Fixture
         ->setphoto('1.jpg')
         ->setCreatedAt(new \DateTimeImmutable())
         ->setformedeboxe('boxe_educative')
+        ->setIsVerified(true) // Définissez is_verified sur true
+        ->setRoles(['ROLE_USER']);
+        $manager->persist($users1);
+
+        $users2 = new Users();
+        $users2->setNom('duche')
+            ->setPrenom('eric')
+            ->setEmail('edu@gmail.com') // Assurez-vous d'ajouter un point-virgule ici
+            ->setPassword($this->hasher->hashPassword($users2, "Afpa1234")) // Utilisez $users2 ici
+            ->setSexe('h')
+            ->setAdresse('1 avenue de grece ')
+            ->setDatenaiss(new \DateTime('06/04/1992'))
+            ->setCodepostal('80987')
+            ->setVille('villers')
+            ->setPays('France')
+            ->setTelephone('0607059876')
+            ->setPhoto('3.pjg')
+            ->setCreatedAt(new \DateTimeImmutable())
+            ->setIsVerified(true) // Définissez is_verified sur true
+            ->setRoles(['ROLE_USER'])
+            ->setFormedeboxe('aeroboxe');
+        $manager->persist($users2);
+
+        $users3 = new Users();
+        $users3->setnom('poisson')
+        ->setprenom('paul')
+        ->setPassword($this->hasher->hashPassword($users2, "Afpa1234")) // Utilisez $users2 ici
+        ->setsexe('m')
+        ->setEmail('ppaul@gmail.com')
+        ->setadresse('1 rue colvert')
+        ->setDatenaiss(new \DateTime('01/03/1987'))
+        ->setcodepostal('80867')
+        ->setville('amiens')
+        ->setPays('France')
+        ->settelephone('0897986578')
+        ->setphoto('2.jpg')
+        ->setCreatedAt(new \DateTimeImmutable())
+        ->setformedeboxe('boxe_educative')
+        ->setIsVerified(true) // Définissez is_verified sur true
         ->setRoles(['ROLE_ADMIN']);
-        $manager->persist($users);
+        $manager->persist($users3);
 
-        // $users2 = new Users();
-        // $users2->setnom('konan')
-        // ->setprenom('jude')
-        // ->setPassword(password_hash('password', PASSWORD_DEFAULT))
-        // ->setsexe('f')
-        // ->setemail('judek@gmail.com')
-        // ->setadresse('9 route de paris')
-        // ->setDatenaiss(new \DateTime('06/04/1987'))
-        // ->setcodepostal('80123')
-        // ->setville('cardonelle')
-        // ->settelephone('0203946576')
-        // ->setphoto('2.jpg')
-        // ->setCreatedAt(new \DateTimeImmutable())
-        // ->setRoles(['ROLE_USER'])
-        // ->setformedeboxe('boxe_amateur');
-        // $manager->persist($users2);
-
-
-        // $users3 = new Users();
-        // $users3->setnom('duche')
-        // ->setprenom('eric')
-        // ->setPassword(password_hash('password', PASSWORD_DEFAULT))
-        // ->setsexe('h')
-        // ->setemail('edu@gmail.com')
-        // ->setadresse('1 avenue de grece ')
-        // ->setDatenaiss(new \DateTime('06/04/1992'))
-        // ->setcodepostal('80987')
-        // ->setville('villers')
-        // ->settelephone('0607059876')
-        // ->setphoto('3.pjg')
-        // ->setCreatedAt(new \DateTimeImmutable())
-        // ->setRoles(['ROLE_USER'])
-        // ->setformedeboxe('aeroboxe');
-        // $manager->persist($users3);
+         // Création des licences
+         $licence = new Licence();
+         $licence->setCreatedAt(new \DateTimeImmutable())
+             ->setNomlicence('amateur');
+         $licence->addUser($users1); // Correction de la variable
+         $manager->persist($licence);
+         $licence2 = new Licence();
+         $licence2->setCreatedAt(new \DateTimeImmutable())
+             ->setNomlicence('professionnelle');
+         $licence2->addUser($users2); // Correction de la variable
+         $manager->persist($licence2);
+ 
 
         // $users4 = new Users();
         // $users4->setnom('')
@@ -192,12 +209,7 @@ class AppFixtures extends Fixture
         
 
 
-        $licence = new Licence();
-        $licence->setCreatedAt(new \DateTimeImmutable())
-        ->setNomlicence('amateur')
-        ->addUser($users); // Associer la licence à l'utilisateur fictif
-
-        $manager->persist($licence);
+        
             
         $Formedeboxe1 = new Formedeboxe();
         $Formedeboxe1->setNom('boxe educative')
@@ -274,7 +286,6 @@ class AppFixtures extends Fixture
 }
             // $commande->setAdresse($adresse); // Associez l'adresse à la commande
         // $users->addAdresse($adresse); // Assurez-vous que l'utilisateur est le bon (ici $users3)
-        $manager->persist($users);
         $manager->persist($commande);
         $manager->flush();
     }

@@ -308,6 +308,6 @@ class __TwigTemplate_f9a042f7adea3ce87aebde3a4c0ecaf6 extends Template
     {% endif %}
 </main>
 {% endblock %}
-", "cart/index.html.twig", "/home/mary/Documents/stageApi2/templates/cart/index.html.twig");
+", "cart/index.html.twig", "/home/mary/Documents/stageApi3/templates/cart/index.html.twig");
     }
 }

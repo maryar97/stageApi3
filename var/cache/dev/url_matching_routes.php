@@ -124,48 +124,51 @@ return [
                             .')'
                         .')'
                     .')'
-                    .'|dresse/(?'
-                        .'|adresse/([^/]++)(?'
-                            .'|(*:1043)'
-                            .'|/edit(*:1057)'
+                    .'|d(?'
+                        .'|resse/(?'
+                            .'|adresse/([^/]++)(?'
+                                .'|(*:1046)'
+                                .'|/edit(*:1060)'
+                            .')'
+                            .'|([^/]++)(*:1078)'
                         .')'
-                        .'|([^/]++)(*:1075)'
+                        .'|min/licenciés/suppression/([^/]++)(*:1123)'
                     .')'
                 .')'
                 .'|/_(?'
-                    .'|error/(\\d+)(?:\\.([^/]++))?(*:1117)'
-                    .'|wdt/([^/]++)(*:1138)'
+                    .'|error/(\\d+)(?:\\.([^/]++))?(*:1165)'
+                    .'|wdt/([^/]++)(*:1186)'
                     .'|profiler/(?'
-                        .'|font/([^/\\.]++)\\.woff2(*:1181)'
+                        .'|font/([^/\\.]++)\\.woff2(*:1229)'
                         .'|([^/]++)(?'
                             .'|/(?'
-                                .'|search/results(*:1219)'
-                                .'|router(*:1234)'
+                                .'|search/results(*:1267)'
+                                .'|router(*:1282)'
                                 .'|exception(?'
-                                    .'|(*:1255)'
-                                    .'|\\.css(*:1269)'
+                                    .'|(*:1303)'
+                                    .'|\\.css(*:1317)'
                                 .')'
                             .')'
-                            .'|(*:1280)'
+                            .'|(*:1328)'
                         .')'
                     .')'
                 .')'
                 .'|/mon\\-panier/(?'
-                    .'|add/(\\d+)(*:1317)'
-                    .'|remove/([^/]++)(*:1341)'
+                    .'|add/(\\d+)(*:1365)'
+                    .'|remove/([^/]++)(*:1389)'
                 .')'
-                .'|/edition/([^/]++)(*:1368)'
+                .'|/edition/([^/]++)(*:1416)'
                 .'|/s(?'
-                    .'|uppression/([^/]++)(*:1401)'
+                    .'|uppression/([^/]++)(*:1449)'
                     .'|tripe/(?'
-                        .'|create\\-charge/([^/]++)(*:1442)'
-                        .'|([^/]++)(*:1459)'
+                        .'|create\\-charge/([^/]++)(*:1490)'
+                        .'|([^/]++)(*:1507)'
                     .')'
                 .')'
                 .'|/order/(?'
-                    .'|create\\-session\\-stripe/([^/]++)(*:1512)'
-                    .'|success/([^/]++)(*:1537)'
-                    .'|error/([^/]++)(*:1560)'
+                    .'|create\\-session\\-stripe/([^/]++)(*:1560)'
+                    .'|success/([^/]++)(*:1585)'
+                    .'|error/([^/]++)(*:1608)'
                 .')'
             .')/?$}sDu',
     ],
@@ -254,26 +257,27 @@ return [
             [['_route' => '_api_/userss/{id}{._format}_patch', '_controller' => 'api_platform.symfony.main_controller', '_format' => null, '_stateless' => true, '_api_resource_class' => 'App\\Entity\\Users', '_api_operation_name' => '_api_/userss/{id}{._format}_patch'], ['id', '_format'], ['PATCH' => 0], null, false, true, null],
             [['_route' => '_api_/userss/{id}{._format}_delete', '_controller' => 'api_platform.symfony.main_controller', '_format' => null, '_stateless' => true, '_api_resource_class' => 'App\\Entity\\Users', '_api_operation_name' => '_api_/userss/{id}{._format}_delete'], ['id', '_format'], ['DELETE' => 0], null, false, true, null],
         ],
-        1043 => [[['_route' => 'app_adresse_show', '_controller' => 'App\\Controller\\AdresseController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        1057 => [[['_route' => 'app_adresse_edit', '_controller' => 'App\\Controller\\AdresseController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        1075 => [[['_route' => 'app_adresse_delete', '_controller' => 'App\\Controller\\AdresseController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
-        1117 => [[['_route' => '_preview_error', '_controller' => 'error_controller::preview', '_format' => 'html'], ['code', '_format'], null, null, false, true, null]],
-        1138 => [[['_route' => '_wdt', '_controller' => 'web_profiler.controller.profiler::toolbarAction'], ['token'], null, null, false, true, null]],
-        1181 => [[['_route' => '_profiler_font', '_controller' => 'web_profiler.controller.profiler::fontAction'], ['fontName'], null, null, false, false, null]],
-        1219 => [[['_route' => '_profiler_search_results', '_controller' => 'web_profiler.controller.profiler::searchResultsAction'], ['token'], null, null, false, false, null]],
-        1234 => [[['_route' => '_profiler_router', '_controller' => 'web_profiler.controller.router::panelAction'], ['token'], null, null, false, false, null]],
-        1255 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
-        1269 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
-        1280 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
-        1317 => [[['_route' => 'cart_add', '_controller' => 'App\\Controller\\CartController::addToCart'], ['id'], null, null, false, true, null]],
-        1341 => [[['_route' => 'cart_remove', '_controller' => 'App\\Controller\\CartController::removeToCart'], ['id'], null, null, false, true, null]],
-        1368 => [[['_route' => 'edit', '_controller' => 'App\\Controller\\FormedeboxeController::modifie'], ['id'], null, null, false, true, null]],
-        1401 => [[['_route' => 'supprime', '_controller' => 'App\\Controller\\FormedeboxeController::supprime'], ['id'], null, null, false, true, null]],
-        1442 => [[['_route' => 'app_stripe_charge', '_controller' => 'App\\Controller\\StripeController::createCharge'], ['reference'], ['POST' => 0], null, false, true, null]],
-        1459 => [[['_route' => 'app_stripe', '_controller' => 'App\\Controller\\StripeController::index'], ['reference'], null, null, false, true, null]],
-        1512 => [[['_route' => 'payment_stripe', '_controller' => 'App\\Controller\\PaymentController::stripeCheckout'], ['reference'], null, null, false, true, null]],
-        1537 => [[['_route' => 'payment_success', '_controller' => 'App\\Controller\\PaymentController::stripeSuccess'], ['reference'], null, null, false, true, null]],
-        1560 => [
+        1046 => [[['_route' => 'app_adresse_show', '_controller' => 'App\\Controller\\AdresseController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        1060 => [[['_route' => 'app_adresse_edit', '_controller' => 'App\\Controller\\AdresseController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        1078 => [[['_route' => 'app_adresse_delete', '_controller' => 'App\\Controller\\AdresseController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        1123 => [[['_route' => 'admin_licenciés_supprimer', '_controller' => 'App\\Controller\\Admin\\LicenciéController::supprimer'], ['id'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
+        1165 => [[['_route' => '_preview_error', '_controller' => 'error_controller::preview', '_format' => 'html'], ['code', '_format'], null, null, false, true, null]],
+        1186 => [[['_route' => '_wdt', '_controller' => 'web_profiler.controller.profiler::toolbarAction'], ['token'], null, null, false, true, null]],
+        1229 => [[['_route' => '_profiler_font', '_controller' => 'web_profiler.controller.profiler::fontAction'], ['fontName'], null, null, false, false, null]],
+        1267 => [[['_route' => '_profiler_search_results', '_controller' => 'web_profiler.controller.profiler::searchResultsAction'], ['token'], null, null, false, false, null]],
+        1282 => [[['_route' => '_profiler_router', '_controller' => 'web_profiler.controller.router::panelAction'], ['token'], null, null, false, false, null]],
+        1303 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
+        1317 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
+        1328 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
+        1365 => [[['_route' => 'cart_add', '_controller' => 'App\\Controller\\CartController::addToCart'], ['id'], null, null, false, true, null]],
+        1389 => [[['_route' => 'cart_remove', '_controller' => 'App\\Controller\\CartController::removeToCart'], ['id'], null, null, false, true, null]],
+        1416 => [[['_route' => 'edit', '_controller' => 'App\\Controller\\FormedeboxeController::edit'], ['id'], null, null, false, true, null]],
+        1449 => [[['_route' => 'delete', '_controller' => 'App\\Controller\\FormedeboxeController::delete'], ['id'], null, null, false, true, null]],
+        1490 => [[['_route' => 'app_stripe_charge', '_controller' => 'App\\Controller\\StripeController::createCharge'], ['reference'], ['POST' => 0], null, false, true, null]],
+        1507 => [[['_route' => 'app_stripe', '_controller' => 'App\\Controller\\StripeController::index'], ['reference'], null, null, false, true, null]],
+        1560 => [[['_route' => 'payment_stripe', '_controller' => 'App\\Controller\\PaymentController::stripeCheckout'], ['reference'], null, null, false, true, null]],
+        1585 => [[['_route' => 'payment_success', '_controller' => 'App\\Controller\\PaymentController::stripeSuccess'], ['reference'], null, null, false, true, null]],
+        1608 => [
             [['_route' => 'payment_error', '_controller' => 'App\\Controller\\PaymentController::stripeError'], ['reference'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

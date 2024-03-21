@@ -68,7 +68,7 @@ class FormedeboxeController extends AbstractController
             $this->addFlash('success', 'Forme de boxe ajoutée avec succès');
 
             // on redirige 
-            return $this->redirectToRoute('liste');
+            return $this->redirectToRoute('lite');
         }
         
         
@@ -79,31 +79,69 @@ class FormedeboxeController extends AbstractController
         }
 
         #[Route('/edition/{id}', name: 'edit')]
-        public function modifie(Formedeboxe $formedeboxe): Response
+        public function edit(Formedeboxe $formedeboxe, Request $request, EntityManagerInterface $em ): Response
         {
             
             $this->denyAccessUnlessGranted('ROLE_ADMIN');
-            return $this->render('formedeboxe/liste.html.twig',[
-                'formedeboxes' => [$formedeboxe], // Passer un tableau avec l'objet Formedeboxe à la vue
+            // on crée le formulaire
+        $formedeboxeForm = $this->createForm(FormedeboxeFormType::class, $formedeboxe);
+        
+        // on traite la requête du formulaire
+        $formedeboxeForm->handleRequest($request);
+        // dd($formedeboxeForm);
 
-            ]); 
+        // on verifie si le formulaire est soumis ET valide
+        if($formedeboxeForm->isSubmitted() && $formedeboxeForm->isValid()){
+            // on génère le nom
+            //dd($produit);
+            $prix = $formedeboxe->getPrix();
+            $formedeboxe->setPrix($prix);
+
+
+            // on stock
+            $em->persist($formedeboxe);
+            $em->flush();
+
+            $this->addFlash('success', 'Forme de boxe modifiée avec succès');
+
+            // on redirige 
+            return $this->redirectToRoute('liste');
+        }
+        return $this->render('formedeboxe/edit.html.twig',[
+                'formedeboxeForm' => $formedeboxeForm->createView()
+                ]); 
+            // return $this->render('formedeboxe/edit.html.twig',[
+            //     'formedeboxes' => [$formedeboxe], // Passer un tableau avec l'objet Formedeboxe à la vue
+
+            // ]); 
         }
 
-        #[Route('/suppression/{id}', name: 'supprime')]
-        public function supprime(Formedeboxe $formedeboxe): Response
+        
+        #[Route('/suppression/{id}', name: 'delete')]
+        public function delete(Formedeboxe $formedeboxe, Request $request, EntityManagerInterface $em): Response
         {
             $this->denyAccessUnlessGranted('ROLE_ADMIN');
-            return $this->render('formedeboxe/liste.html.twig',[
-                'formedeboxes' => [$formedeboxe], // Passer un tableau avec l'objet Formedeboxe à la vue
-
-            ]);         }
-
         
-    
-    
-    
-
-
-
+            $formedeboxeForm = $this->createForm(FormedeboxeFormType::class, $formedeboxe);
+        
+            // Traiter la soumission du formulaire
+            $formedeboxeForm->handleRequest($request);
+        
+            // Vérifier si le formulaire est soumis et valide
+            if ($formedeboxeForm->isSubmitted() && $formedeboxeForm->isValid()) {
+                // Supprimer l'entité
+                $em->remove($formedeboxe);
+                $em->flush();
+        
+                $this->addFlash('success', 'Forme de boxe supprimée avec succès');
+        
+                // Rediriger vers la liste des formes de boxe après la suppression
+                return $this->redirectToRoute('liste');
+            }
+        
+            return $this->render('formedeboxe/delete.html.twig', [
+                'formedeboxeForm' => $formedeboxeForm->createView(),
+            ]);
+        }
 }
 

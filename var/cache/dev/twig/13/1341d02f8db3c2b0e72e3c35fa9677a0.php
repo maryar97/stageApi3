@@ -65,7 +65,10 @@ class __TwigTemplate_463ab2debcf6a1c37d2c2a40b46735ab extends Template
         // line 7
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formedeboxeForm"]) || array_key_exists("formedeboxeForm", $context) ? $context["formedeboxeForm"] : (function () { throw new RuntimeError('Variable "formedeboxeForm" does not exist.', 7, $this->source); })()), "quantite", [], "any", false, false, false, 7), 'row');
         echo "
-    <button type=\"submit\" class=\"btn btn-dark\">Valider</button>
+    <button type=\"submit\" class=\"btn btn-dark\">";
+        // line 8
+        echo twig_escape_filter($this->env, ((array_key_exists("button_label", $context)) ? (_twig_default_filter((isset($context["button_label"]) || array_key_exists("button_label", $context) ? $context["button_label"] : (function () { throw new RuntimeError('Variable "button_label" does not exist.', 8, $this->source); })()), "Ajouter")) : ("Ajouter")), "html", null, true);
+        echo "</button>
 ";
         // line 9
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formedeboxeForm"]) || array_key_exists("formedeboxeForm", $context) ? $context["formedeboxeForm"] : (function () { throw new RuntimeError('Variable "formedeboxeForm" does not exist.', 9, $this->source); })()), 'form_end');
@@ -98,7 +101,7 @@ class __TwigTemplate_463ab2debcf6a1c37d2c2a40b46735ab extends Template
      */
     public function getDebugInfo()
     {
-        return array (  71 => 9,  66 => 7,  62 => 6,  58 => 5,  54 => 4,  50 => 3,  46 => 2,  43 => 1,);
+        return array (  74 => 9,  70 => 8,  66 => 7,  62 => 6,  58 => 5,  54 => 4,  50 => 3,  46 => 2,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -110,7 +113,7 @@ class __TwigTemplate_463ab2debcf6a1c37d2c2a40b46735ab extends Template
     {{ form_row(formedeboxeForm.photo) }}
     {{ form_row(formedeboxeForm.prix) }}
     {{ form_row(formedeboxeForm.quantite) }}
-    <button type=\"submit\" class=\"btn btn-dark\">Valider</button>
+    <button type=\"submit\" class=\"btn btn-dark\">{{ button_label|default('Ajouter') }}</button>
 {{ form_end(formedeboxeForm) }}", "formedeboxe/_form.html.twig", "/home/mary/Documents/stageApi3/templates/formedeboxe/_form.html.twig");
     }
 }
