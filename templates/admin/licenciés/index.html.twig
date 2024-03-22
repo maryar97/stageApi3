@@ -1,5 +1,4 @@
-{% extends 'base.html.twig' %}
-
+{% extends "base.html.twig" %}
 {% block title %}Liste des licenciés{% endblock %}
 
 {% block body %}
@@ -23,7 +22,6 @@
                         <th>Email</th>
                         <th>Sexe</th>
                         <th>Date de naissance</th>
-                        <!-- Ajoutez d'autres colonnes pour afficher d'autres informations de l'utilisateur -->
                     </tr>
                 </thead>
                 <tbody>
@@ -42,7 +40,6 @@
                                 <td>{{ user.getEmail() }}</td>
                                 <td>{{ user.getSexe() }}</td>
                                 <td>{{ user.getDatenaiss() ? user.getDatenaiss()|date('Y-m-d') : '' }}</td>
-                                <!-- Ajoutez d'autres cellules pour afficher d'autres informations de l'utilisateur -->
                             </tr>
                         {% endfor %}
                     {% endfor %}

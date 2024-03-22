@@ -45,6 +45,7 @@ class Formedeboxe
     public function __construct()
     {
         $this->recapDetails = new ArrayCollection();
+        
     }
 
     public function getId(): ?int

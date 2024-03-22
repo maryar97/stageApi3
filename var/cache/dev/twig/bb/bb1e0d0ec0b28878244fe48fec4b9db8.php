@@ -139,11 +139,7 @@ class __TwigTemplate_bf30154318ab9700dc7f656de17d6b1a extends Template
             // line 33
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["formedeboxe"], "quantite", [], "any", false, false, false, 33), "html", null, true);
             echo "</td>
-                            <td>
-                                <a href=\"";
-            // line 35
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("edit", ["id" => twig_get_attribute($this->env, $this->source, $context["formedeboxe"], "id", [], "any", false, false, false, 35)]), "html", null, true);
-            echo "\">Modifier
+                    
 
                             <!-- Ajoutez d'autres cellules pour afficher d'autres informations de l'utilisateur -->
                         </tr>
@@ -152,7 +148,7 @@ class __TwigTemplate_bf30154318ab9700dc7f656de17d6b1a extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['formedeboxe'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 40
+        // line 39
         echo "                </tbody>
             </table>
         </main>
@@ -188,7 +184,7 @@ class __TwigTemplate_bf30154318ab9700dc7f656de17d6b1a extends Template
      */
     public function getDebugInfo()
     {
-        return array (  156 => 40,  145 => 35,  140 => 33,  136 => 32,  132 => 31,  128 => 30,  124 => 29,  120 => 28,  117 => 27,  113 => 26,  94 => 9,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  152 => 39,  140 => 33,  136 => 32,  132 => 31,  128 => 30,  124 => 29,  120 => 28,  117 => 27,  113 => 26,  94 => 9,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -226,8 +222,7 @@ class __TwigTemplate_bf30154318ab9700dc7f656de17d6b1a extends Template
 \t\t\t\t\t\t\t<td><img src=\"/image/{{ formedeboxe.photo }}\" class=\"card-img-top\" alt=\"...\"></td>
                             <td>{{ formedeboxe.prix }}</td>
                             <td>{{ formedeboxe.quantite }}</td>
-                            <td>
-                                <a href=\"{{ path('edit', {id: formedeboxe.id})}}\">Modifier
+                    
 
                             <!-- Ajoutez d'autres cellules pour afficher d'autres informations de l'utilisateur -->
                         </tr>

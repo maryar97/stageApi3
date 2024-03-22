@@ -51,14 +51,14 @@ class __TwigTemplate_0143b269b5af4eff42777e42fea60511 extends Template
 \t\t\t<p>
 \t\t\t\t<a href=\"";
         // line 10
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_licenciés_index");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("licenciés");
         echo "\">
 \t\t\t\t\tListe des licenciés</a>
 \t\t\t</p>
 \t\t\t<p>
 \t\t\t\t<a href=\"";
         // line 14
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin_licenciés_creer");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("creer");
         echo "\">
 \t\t\t\t\tAjouter un licencié</a>
 \t\t\t</p>
@@ -143,11 +143,11 @@ class __TwigTemplate_0143b269b5af4eff42777e42fea60511 extends Template
 \t\t</div>
 \t\t<div class=\"card-body\">
 \t\t\t<p>
-\t\t\t\t<a href=\"{{ path('admin_licenciés_index')}}\">
+\t\t\t\t<a href=\"{{ path('licenciés')}}\">
 \t\t\t\t\tListe des licenciés</a>
 \t\t\t</p>
 \t\t\t<p>
-\t\t\t\t<a href=\"{{ path('admin_licenciés_creer')}}\">
+\t\t\t\t<a href=\"{{ path('creer')}}\">
 \t\t\t\t\tAjouter un licencié</a>
 \t\t\t</p>
 
@@ -183,6 +183,6 @@ class __TwigTemplate_0143b269b5af4eff42777e42fea60511 extends Template
 \t\t\t</p>
 \t\t</div>
 \t</article>
-</aside> ", "_adminnav.html.twig", "/home/mary/Documents/stageApi3/templates/_adminnav.html.twig");
+</aside> ", "_adminnav.html.twig", "/home/mary/Musique/stageApi3/templates/_adminnav.html.twig");
     }
 }

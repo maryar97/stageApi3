@@ -65,7 +65,7 @@ class __TwigTemplate_64d7c6b9cd3c142177ad80930f1ae256 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Administration de forme de boxe";
+        echo "Administration de licence ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -88,7 +88,7 @@ class __TwigTemplate_64d7c6b9cd3c142177ad80930f1ae256 extends Template
         echo "    <main class=\"container\">
         <section class=\"row\">
             <div class=\"col-12\">
-                <h1>Ajouter une forme de boxe</h1>
+                <h1>Ajouter un licencié</h1>
                 ";
         // line 10
         $this->loadTemplate("admin/licenciés/_form.html.twig", "admin/licenciés/creer.html.twig", 10)->display($context);
@@ -133,13 +133,13 @@ class __TwigTemplate_64d7c6b9cd3c142177ad80930f1ae256 extends Template
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}Administration de forme de boxe{% endblock %}
+{% block title %}Administration de licence {% endblock %}
 
 {% block body %}
     <main class=\"container\">
         <section class=\"row\">
             <div class=\"col-12\">
-                <h1>Ajouter une forme de boxe</h1>
+                <h1>Ajouter un licencié</h1>
                 {% include \"admin/licenciés/_form.html.twig\" %}
             </div>
         </section>

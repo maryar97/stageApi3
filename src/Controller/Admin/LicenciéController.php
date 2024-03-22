@@ -13,9 +13,18 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-#[Route('/admin/licenciés', name: 'admin_licenciés_')]
 class LicenciéController extends AbstractController
 {
+
+    #[Route('/admin/licenciés', name: 'licenciés')]
+    public function adminLicenciés(LicenceRepository $licenceRepository): Response
+    {
+        $licences = $licenceRepository->findAll(); // Récupérer toutes les licences depuis le repository
+
+        return $this->render('admin/licenciés/index.html.twig', [
+            'licences' => $licences, // Passer les licences au template
+        ]);
+    }
     private $entityManager;
 
     public function __construct(EntityManagerInterface $entityManager)

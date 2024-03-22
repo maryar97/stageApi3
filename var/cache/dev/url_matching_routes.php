@@ -14,9 +14,12 @@ return [
         '/_profiler/phpinfo' => [[['_route' => '_profiler_phpinfo', '_controller' => 'web_profiler.controller.profiler::phpinfoAction'], null, null, null, false, false, null]],
         '/_profiler/xdebug' => [[['_route' => '_profiler_xdebug', '_controller' => 'web_profiler.controller.profiler::xdebugAction'], null, null, null, false, false, null]],
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
-        '/' => [[['_route' => 'app_accueil', '_controller' => 'App\\Controller\\AccueilController::index'], null, null, null, false, false, null]],
-        '/admin/licenciés' => [[['_route' => 'admin_licenciés_index', '_controller' => 'App\\Controller\\Admin\\LicenciéController::index'], null, null, null, true, false, null]],
-        '/admin/licenciés/creer' => [[['_route' => 'admin_licenciés_creer', '_controller' => 'App\\Controller\\Admin\\LicenciéController::creerLicence'], null, null, null, false, false, null]],
+        '/' => [
+            [['_route' => 'app_accueil', '_controller' => 'App\\Controller\\AccueilController::index'], null, null, null, false, false, null],
+            [['_route' => 'index', '_controller' => 'App\\Controller\\Admin\\LicenciéController::index'], null, null, null, false, false, null],
+        ],
+        '/admin/licenciés' => [[['_route' => 'licenciés', '_controller' => 'App\\Controller\\Admin\\LicenciéController::adminLicenciés'], null, null, null, false, false, null]],
+        '/creer' => [[['_route' => 'creer', '_controller' => 'App\\Controller\\Admin\\LicenciéController::creerLicence'], null, null, null, false, false, null]],
         '/admin' => [[['_route' => 'admin_index', '_controller' => 'App\\Controller\\Admin\\MainController::index'], null, null, null, true, false, null]],
         '/admin/utilisateurs' => [[['_route' => 'admin_users_index', '_controller' => 'App\\Controller\\Admin\\UsersController::index'], null, null, null, true, false, null]],
         '/adresse/adresse' => [[['_route' => 'app_adresse_index', '_controller' => 'App\\Controller\\AdresseController::index'], null, ['GET' => 0], null, false, false, null]],
@@ -33,7 +36,6 @@ return [
         '/order-verify' => [[['_route' => 'order_prepare', '_controller' => 'App\\Controller\\CommandeController::prepareOrder'], null, ['POST' => 0], null, false, false, null]],
         '/formedeboxe' => [[['_route' => 'app_formedeboxe', '_controller' => 'App\\Controller\\FormedeboxeController::index'], null, null, null, false, false, null]],
         '/formedeboxe/liste' => [[['_route' => 'liste', '_controller' => 'App\\Controller\\FormedeboxeController::liste'], null, null, null, false, false, null]],
-        '/ajout' => [[['_route' => 'add', '_controller' => 'App\\Controller\\FormedeboxeController::ajout'], null, null, null, false, false, null]],
         '/horaire' => [[['_route' => 'app_horaire', '_controller' => 'App\\Controller\\HoraireController::index'], null, null, null, false, false, null]],
         '/licence' => [[['_route' => 'app_licence', '_controller' => 'App\\Controller\\LicenceController::index'], null, null, null, false, false, null]],
         '/inscription' => [[['_route' => 'app_inscription', '_controller' => 'App\\Controller\\RegistrationController::register'], null, null, null, false, false, null]],
@@ -153,22 +155,21 @@ return [
                         .')'
                     .')'
                 .')'
-                .'|/mon\\-panier/(?'
-                    .'|add/(\\d+)(*:1365)'
-                    .'|remove/([^/]++)(*:1389)'
-                .')'
-                .'|/edition/([^/]++)(*:1416)'
                 .'|/s(?'
-                    .'|uppression/([^/]++)(*:1449)'
+                    .'|uppression/([^/]++)(*:1364)'
                     .'|tripe/(?'
-                        .'|create\\-charge/([^/]++)(*:1490)'
-                        .'|([^/]++)(*:1507)'
+                        .'|create\\-charge/([^/]++)(*:1405)'
+                        .'|([^/]++)(*:1422)'
                     .')'
                 .')'
+                .'|/mon\\-panier/(?'
+                    .'|add/(\\d+)(*:1458)'
+                    .'|remove/([^/]++)(*:1482)'
+                .')'
                 .'|/order/(?'
-                    .'|create\\-session\\-stripe/([^/]++)(*:1560)'
-                    .'|success/([^/]++)(*:1585)'
-                    .'|error/([^/]++)(*:1608)'
+                    .'|create\\-session\\-stripe/([^/]++)(*:1534)'
+                    .'|success/([^/]++)(*:1559)'
+                    .'|error/([^/]++)(*:1582)'
                 .')'
             .')/?$}sDu',
     ],
@@ -269,15 +270,14 @@ return [
         1303 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
         1317 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
         1328 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
-        1365 => [[['_route' => 'cart_add', '_controller' => 'App\\Controller\\CartController::addToCart'], ['id'], null, null, false, true, null]],
-        1389 => [[['_route' => 'cart_remove', '_controller' => 'App\\Controller\\CartController::removeToCart'], ['id'], null, null, false, true, null]],
-        1416 => [[['_route' => 'edit', '_controller' => 'App\\Controller\\FormedeboxeController::edit'], ['id'], null, null, false, true, null]],
-        1449 => [[['_route' => 'delete', '_controller' => 'App\\Controller\\FormedeboxeController::delete'], ['id'], null, null, false, true, null]],
-        1490 => [[['_route' => 'app_stripe_charge', '_controller' => 'App\\Controller\\StripeController::createCharge'], ['reference'], ['POST' => 0], null, false, true, null]],
-        1507 => [[['_route' => 'app_stripe', '_controller' => 'App\\Controller\\StripeController::index'], ['reference'], null, null, false, true, null]],
-        1560 => [[['_route' => 'payment_stripe', '_controller' => 'App\\Controller\\PaymentController::stripeCheckout'], ['reference'], null, null, false, true, null]],
-        1585 => [[['_route' => 'payment_success', '_controller' => 'App\\Controller\\PaymentController::stripeSuccess'], ['reference'], null, null, false, true, null]],
-        1608 => [
+        1364 => [[['_route' => 'supprimer', '_controller' => 'App\\Controller\\Admin\\LicenciéController::supprimer'], ['id'], null, null, false, true, null]],
+        1405 => [[['_route' => 'app_stripe_charge', '_controller' => 'App\\Controller\\StripeController::createCharge'], ['reference'], ['POST' => 0], null, false, true, null]],
+        1422 => [[['_route' => 'app_stripe', '_controller' => 'App\\Controller\\StripeController::index'], ['reference'], null, null, false, true, null]],
+        1458 => [[['_route' => 'cart_add', '_controller' => 'App\\Controller\\CartController::addToCart'], ['id'], null, null, false, true, null]],
+        1482 => [[['_route' => 'cart_remove', '_controller' => 'App\\Controller\\CartController::removeToCart'], ['id'], null, null, false, true, null]],
+        1534 => [[['_route' => 'payment_stripe', '_controller' => 'App\\Controller\\PaymentController::stripeCheckout'], ['reference'], null, null, false, true, null]],
+        1559 => [[['_route' => 'payment_success', '_controller' => 'App\\Controller\\PaymentController::stripeSuccess'], ['reference'], null, null, false, true, null]],
+        1582 => [
             [['_route' => 'payment_error', '_controller' => 'App\\Controller\\PaymentController::stripeError'], ['reference'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
